@@ -1,0 +1,12 @@
+{
+  "name": "minio",
+  "version": "1.0.0",
+  "description": "minio-example",
+  "main": "index.js",
+  "author": "soichiro",
+  "license": "MIT",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.427.0"
+  },
+  "type": "module"
+}

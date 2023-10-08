@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  node:
+    # Doc: https://hub.docker.com/_/node
+    image: node:latest
+    environment:
+      AWS_ACCESS_KEY_ID: root
+      AWS_SECRET_ACCESS_KEY: password
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/src
+    working_dir: /src
+
+  minio:
+    # Doc: https://hub.docker.com/r/minio/minio
+    # image: quay.io/minio/minio:latest
+    image: minio/minio:latest
+    environment:
+      MINIO_ROOT_USER: root
+      MINIO_ROOT_PASSWORD: password
+    command: server --console-address ":9001" /data
+    ports:
+      - 9000:9000
+      - 9001:9001
+    volumes:
+      - ./docker/minio/data:/data
