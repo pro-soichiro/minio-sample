@@ -1,7 +1,6 @@
 # MinIOとSDKでS3をテストする
 
 ```bash
-docker compose build
 docker compose run --rm node yarn
 docker compose up -d
 docker compose run --rm node node index.js
